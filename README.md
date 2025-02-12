@@ -1,6 +1,6 @@
 <pre>Entropy Calculator! </pre><br />
 
-Password entropy is one way of determining how difficult a password is to guess with a brute force attack. The formula to calculate entropy is: E = L * [Equation] or E = L * log(R) / log(2) 
+Password entropy is one way of determining how difficult a password is to guess with a brute force attack. The formula to calculate entropy is: E = L * log(R) / log(2) 
 where: 
 
 L = Length of the password 
