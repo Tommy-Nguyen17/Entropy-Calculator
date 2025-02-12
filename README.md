@@ -1,4 +1,4 @@
-Entropy Calculator!
+<pre>Entropy Calculator! </pre><br />
 
 Password entropy is one way of determining how difficult a password is to guess with a brute force attack. The formula to calculate entropy is: E = L * [Equation] or E = L * log(R) / log(2) 
 where: 
@@ -8,10 +8,10 @@ R = The number of different possible characters in the password pool
 
 We will only be dealing with passwords that could be typed on a US English keyboard, so the possible character pools are: 
 
-Digits: 0-1                                           Pool Size: 10
-Lowercase Letters: a-z                                Pool Size: 26
-Uppercase Letters: A-Z                                Pool Size: 26
-Special Characters: `~!@#$%^&*()-_=+[{}]\;:’”<>/?     Pool Size: 32
+<pre>Digits: 0-1                                           Pool Size: 10 </pre><br />
+<pre>Lowercase Letters: a-z                                Pool Size: 26 </pre><br />
+<pre>Uppercase Letters: A-Z                                Pool Size: 26 </pre><br />
+<pre>Special Characters: `~!@#$%^&*()-_=+[{}]\;:’”<>/?     Pool Size: 32 </pre><br />
 
 For example, for the password StrongPass123! we would calculate the pool size as 94 (10 + 26 + 26 + 32, because it has at least 1 element from all 4 rows) and the password is 14 characters long. 
 
