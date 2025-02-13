@@ -15,7 +15,7 @@ public class calculationsscript : MonoBehaviour
     private  Regex regex1 = new Regex(@"[a-z]"); 
     private  Regex regex2 = new Regex(@"[A-Z]"); 
     private  Regex regex3 = new Regex(@"[0-9]"); 
-    private  Regex regex4 = new Regex(@"[`~!@#$%^&*()-_=+[{}]\;:’”<>/?]"); 
+    private  Regex regex4 = new Regex(@"`~!@#$%^&*()-_=+[{}]\;:’”<>/?"); 
 
 
 
@@ -44,10 +44,12 @@ public class calculationsscript : MonoBehaviour
             poolSize += 10;
         }
 
-        match = regex4.Match(userPassword);
-        if(match.Success) {
+       
+        if(hasSpecialChar(userPassword)){
             poolSize += 32;
         }
+
+        Debug.Log(poolSize);
         
         string stringOne = "Sorry. No free iPhone lmao. \n Thanks for the password though nerd \n";
         string stringTwo = "Entropy: " + calculateEntropy(userPassword.Length) + "\n";
@@ -81,4 +83,14 @@ public class calculationsscript : MonoBehaviour
         return Math.Round((Math.Pow(2, entropy - 1) / numGuessesPerSecond)/SECONDS_IN_A_YEAR);
     }
 
+    private static bool hasSpecialChar(string input)
+    {
+        string specialChar = @"[]`~!@#$%^&*()-_=+[{}]\;:’”<>/? ";
+        foreach (var item in specialChar)
+        {
+            if (input.Contains(item)) return true;
+        }
+
+        return false;
+    }
 }
